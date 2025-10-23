@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 24% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 24% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 24% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 212 100% 68%;
+    --primary-foreground: 210 24% 7%;
+
+    --secondary: 210 24% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 24% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 210 24% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 24% 18%;
+    --input: 210 24% 18%;
+    --ring: 212 100% 68%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --glow-primary: 212 100% 68%;
+    --glow-accent: 180 100% 50%;
+    --gradient-primary: linear-gradient(135deg, hsl(212 100% 68% / 0.2), hsl(180 100% 50% / 0.1));
+    --gradient-glow: linear-gradient(135deg, hsl(212 100% 68% / 0.15), transparent);
+    --shadow-glow: 0 0 40px hsl(212 100% 68% / 0.3);
+    --shadow-accent-glow: 0 0 40px hsl(180 100% 50% / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.4);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--glow-accent) / 0.4);
+  }
+  
+  .card-glow {
+    background: linear-gradient(135deg, hsl(210 24% 10%), hsl(210 24% 12%));
+    border: 1px solid hsl(210 24% 18%);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-glow:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 30px hsl(var(--glow-primary) / 0.2);
+    transform: translateY(-4px);
+  }
+  
+  .glass-effect {
+    background: linear-gradient(135deg, hsl(210 24% 12% / 0.7), hsl(210 24% 10% / 0.5));
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(210 24% 20% / 0.3);
+  }
+  
+  .neon-border {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, hsl(210 24% 10%), hsl(210 24% 12%)) padding-box,
+                linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent))) border-box;
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .animated-gradient {
+    background: linear-gradient(270deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease infinite;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
