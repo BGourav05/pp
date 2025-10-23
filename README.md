@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/8fb7dca4-5ade-4692-9c8a-1617c46acbad
+**URL**:[ bihar-gourav-nexus.lovable.app](https://bihar-gourav-nexus.lovable.app/)
 
 ---
 <img width="1853" height="910" alt="image" src="https://github.com/user-attachments/assets/f15748b1-3018-4db6-88fc-c446233f81d7" />
@@ -24,7 +24,9 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8fb7dca4-5ade-4692-9c8a-1617c46acbad) and start prompting.
+Simply visit the [bihar-gourav-nexus.lovable.app](https://bihar-gourav-nexus.lovable.app/)
+
+ and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
